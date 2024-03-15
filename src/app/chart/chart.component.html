@@ -1,0 +1,20 @@
+
+<div class="container">
+    <div class="row ">
+        <div class="col-md-3 mt-4">
+            <label for="textBox1">Box 1</label>
+            <input type="number" [(ngModel)]="value1"  (ngModelChange)="onValueChange()">
+        </div>
+        <div class="col-md-3 mt-4">
+            <label for="textBox2">Box 2</label>
+            <input type="number" [(ngModel)]="value2"  (ngModelChange)="onValueChange()">
+            <span *ngIf="totalErrors" class="error"> Incorrect Value</span>
+        </div>
+        <div class="button">
+            <button type="button" [disabled]="totalErrors" class="btn btn-success" (click)="generateChart()">Create Chart</button>
+        </div>
+    </div>
+    <div class="card">
+    <p-chart type="pie" [data]="data" [options]="options"></p-chart>
+    </div>
+</div>
